@@ -20,7 +20,7 @@ python -m pipenv install flask #Every time you open that new project folder
 *******************************************************************************
 -server.py file
 ```py
-    from flask import Flask  # Import Flask to allow us to create our app
+    from flask import Flask, render_template # Import Flask to allow us to create our app
 app = Flask(__name__)    # Create a new instance of the Flask class called "app"
 
 # This will change locations in the future

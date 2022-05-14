@@ -29,9 +29,9 @@
     </table>
     <h1>Here is the refactoring</h1>
     <table>
-        {% for i in range(6): %}
+        {% for i in range(num): %}
         <tr>
-            {% for j in range(6): %}
+            {% for j in range(num): %}
             <td class="color{{(i+j)%2+1}}"></td>
             {%endfor%}
         </tr>

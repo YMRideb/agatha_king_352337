@@ -7,12 +7,10 @@ def hello_world():
 
 
 @app.route('/cb')
-def mk_board():
-    return render_template("index.html")
+@app.route('/cb/<int:num>')
+def mk_board(num = 8):
+    return render_template("index.html", num = num)
 
-# @app.route('/cb/<int:num>')
-# def refactor():
-#     return render_template("index.html", num = num)
 
 if __name__ == "__main__":   # Ensure this file is being run directly and not from a different module
     app.run(debug=True)    # Run the app in debug mode.
