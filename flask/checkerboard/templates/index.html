@@ -5,36 +5,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
     <title>Checkerboard</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .board {
-            height: 500px;
-            width: 500px;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .box {
-            border: 1px solid black;
-            border-radius: 2%;
-            height: 250px;
-            width: 250px;
-        }
-    </style>
 </head>
 
 <body>
-    <div class="board" style="background-color:{{color1}}">
-
-    </div>
+    <h1>This is the 8x8 checkerboard</h1>
+    <table>
+        {% for i in range(4): %}
+        <tr>
+            {% for j in range(4): %}
+            <td class="color1"></td>
+            <td class="color2"></td>
+            {%endfor%}
+        </tr>
+        <tr>
+            {%for j in range(4):%}
+            <td class="color2"></td>
+            <td class="color1"></td>
+            {%endfor%}
+        </tr>
+        {%endfor%}
+    </table>
+    <h1>Here is the refactoring</h1>
+    <table>
+        {% for i in range(6): %}
+        <tr>
+            {% for j in range(6): %}
+            <td class="color{{(i+j)%2+1}}"></td>
+            {%endfor%}
+        </tr>
+        {%endfor%}
+    </table>
+</body>
 
 </html>
