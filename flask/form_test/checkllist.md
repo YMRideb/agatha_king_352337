@@ -9,19 +9,22 @@ python -m pipenv install flask #Every time you open that new project folder
 **WARNING** otherwise your shell will not build or run
 
 - navigate CMD Terminal into virtualenv
-```python -m pipenv shell
 ```
+python -m pipenv shell
+```
+```html
 - Folder Structure or project directory structure
-    -"Pipfile"
-    -"Pipfile.lock"
-    -"server.py"
-    -templates  <!-- This is a directory -->
-        "index.html"
     -static <!-- This is also a directory -->
         -css <!-- This is a another directory -->
             -"styles.css"
         -js <!-- Can you guess what this is -->
-        -img <!-- And the last one you'll need here -->
+        -img <!-- And the last one you will need here -->
+   -templates  <!-- This is a directory -->
+        "index.html"
+   -"Pipfile"
+   -"Pipfile.lock"
+   -"server.py"
+  ```
 *******************************************************************************
 -server.py file
 ```py
@@ -40,6 +43,7 @@ if __name__=="__main__":   # Ensure this file is being run directly and not from
 
 
 *******************************************************************************
+```html
 <!-- based on the folder structure on the right -->
 <!-- linking a css style sheet -->
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='my_style.css') }}">
@@ -47,3 +51,4 @@ if __name__=="__main__":   # Ensure this file is being run directly and not from
 <script type="text/javascript" src="{{ url_for('static', filename='my_script.js') }}"></script>
 <!-- linking an image -->
 <img src="{{ url_for('static', filename='my_img.png') }}">
+```
