@@ -9,20 +9,30 @@
 </head>
 
 <body>
-    <h1>Hello there from the template</h1>
-    <p>{{first_name}} {{l_n}}</p>
-    <ul>
-        {% for user in list_users: %}
-        <li>
-            {{user}}
-        </li>
-        {% endfor %}
-        <hr> {%for i in range(0, list_users | length):%}
-        <li>
-            {{list_users[i]}}
-        </li>
-        {%endfor%}
-    </ul>
+    <h1>Index Page</h1>
+    <h3>Create a User</h3>
+    <form action="/users" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name">
+        <label for="email">Email:</label>
+        <input type="text" name="email">
+        <input type="submit" name="" id="" value="create user">
+    </form>
 </body>
+
+<!-- <h1>Hello there from the template</h1>
+<p>{{first_name}} {{l_n}}</p>
+<ul>
+    {% for user in list_users: %}
+    <li>
+        {{user}}
+    </li>
+    {% endfor %}
+    <hr> {%for i in range(0, list_users | length):%}
+    <li>
+        {{list_users[i]}}
+    </li>
+    {%endfor%}
+</ul> -->
 
 </html>

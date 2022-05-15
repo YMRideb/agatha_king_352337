@@ -1,62 +1,28 @@
-# Import Flask to allow us to create our app
-from flask import Flask, render_template
-# Create a new instance of the Flask class called "app"
+from flask import Flask, render_template, request, redirect, session #added session
 app = Flask(__name__)
+app.secret_key = 'keep it secret, keep it safe' # set a secret key for sevcurity purposes
 
-# This will change locations in the future
+@app.route('/')
+def index():
+    return render_template("index.html")
 
-# The following route was my inital testing code, and reference for which variables are passed to where
+@app.route('/users', methods=(['POST']))
+def create_user():
+    print("Got Post Info")
+    session['username'] = request.form['name']
+    session['useremail'] = request.form['email']
+    # print(request.form)
+    # name = request.form['name']
+    # email = request.form['email']
+    # NEVER RENDER A TEMPLATE ON A POST REQUEST
+    # Instead we will redirect to our index route
+    return redirect('/show')
 
-
-@app.route("/")
-def home():
-    first_name = "Josephus"
-    last_name = "Miller"
-
-    users = [                                           # this is list containing all the dicts
-        # each of the moustache braces contain a dict
-        {'first_name': 'Yukio', 'last_name': 'Rideb', 'id': 352337},
-        {'first_name': 'Beau', 'last_name': 'Currier', 'id': 756590},
-        {'first_name': 'David', 'last_name': 'Moore', 'id': 319171},
-        {'first_name': 'Danny', 'last_name': 'ONeal', 'id': 352826}
-    ]
-    return render_template("index.html", first_name=first_name, l_n=last_name, list_users=users)
-
-# **************************************************************************************************
-
-# The following route points to my own dict that I want to use as a model for moving forward
-# with a ship registry for Epstein Class Ships from the show, The Expanse
-
-
-# @app.route('/users2')
-# def users2():
-#     users2 = [                                           # this is list containing all the dicts
-#                                                          # each of the moustache braces contain a dict
-#         {'first_name': 'James', 'last_name': 'Holden', 'id': 987654},
-#         {'first_name': 'Chrisjen', 'last_name': 'Avasarala', 'id': 654321},
-#         {'first_name': 'Naomi', 'last_name': 'Nagata', 'id': 456789},
-#         {'first_name': 'Alex', 'last_name': 'Kamal', 'id': 234567},
-#         {'first_name': 'Beau', 'last_name': 'Currier', 'id': 756590},
-#         {'first_name': 'Danny', 'last_name': 'ONeal', 'id': 352826},
-#         {'first_name': 'Yukio', 'last_name': 'Rideb', 'id': 352337},
-#     ]
-#     return render_template("users2.html", users=users2)
-
-# **************************************************************************************************
-
-# The following route is my submission for the html-table assignment.
-
-
-# @app.route('/html-table')
-# def html_table():
-#     users1 = [
-#         {'first_name': 'Michael', 'last_name': 'Choi'},
-#         {'first_name': 'John', 'last_name': 'Supsupin'},
-#         {'first_name': 'Mark', 'last_name': 'Guillen'},
-#         {'first_name': 'KB', 'last_name': 'Tonel'}
-#     ]
-#     return render_template("html_table.html", users=users1)
-
+@app.route("/show")
+def show_user():
+    print("Showing the User Info From the Form")
+    print(request.form)
+    return render_template("show.html", name_on_template=session['username'], email_on_template=['useremail'])
 
 if __name__ == "__main__":   # Ensure this file is being run directly and not from a different module
     app.run(debug=True)    # Run the app in debug mode.
