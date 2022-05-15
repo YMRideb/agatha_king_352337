@@ -5,19 +5,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
     <title>Create A User</title>
 </head>
 
 <body>
-    <h1>Index Page</h1>
-    <h3>Create a User</h3>
-    <form action="/users" method="post">
-        <label for="name">Name:</label>
-        <input type="text" name="name">
-        <label for="email">Email:</label>
-        <input type="text" name="email">
-        <input type="submit" name="" id="" value="create user">
-    </form>
+    <div class="container">
+        <h1>Counter</h1>
+        <h3>How many times have you visited this page?</h3>
+        <h2>{{session.count}} times</h2>
+        <form action="/add_two">
+            <input type="submit" name="" id="" value=" + 2">
+        </form>
+        <form action="/destroy_session">
+            <input type="submit" name="" id="" value=" = 0 ">
+        </form>
+    </div>
+    <hr>
 </body>
+
+<!-- <label for="name">Name:</label>
+<input type="text" name="name">
+<label for="email">Email:</label>
+<input type="text" name="email"> -->
 
 </html>
