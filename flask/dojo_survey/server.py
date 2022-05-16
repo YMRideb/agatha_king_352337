@@ -1,14 +1,14 @@
-# Import Flask to allow us to create our app
-from contextlib import redirect_stderr
 from flask import Flask, render_template, request, session, redirect
 # Create a new instance of the Flask class called "app"
 app = Flask(__name__)
 app.secret_key='test'
+print("show me the money")
 
 
 # The "@" decorator associates this route with the function immediately following
 @app.route('/')
 def hello_world():
+    # print("show me the money")
     return render_template("index.html")
 
 
@@ -18,6 +18,7 @@ def submit_new():
     session['user_location'] = request.form['user_location']
     session['user_fav_lang'] = request.form['user_fav_lang']
     session['user_comments'] = request.form['user_comments']
+    # print("show me the money")
     return redirect('/show')
 
 
@@ -29,8 +30,7 @@ def show_user():
         "fav_lang": session['user_fav_lang'],
         "comments": session['user_comments']
     }
-    print("Showing the User Info From the Form")
-    # print(request.form)
+    # print("show me the money")
     return render_template("show.html", data=data)
 
 
