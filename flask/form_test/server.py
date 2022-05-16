@@ -11,9 +11,6 @@ def create_user():
     print("Got Post Info")
     session['username'] = request.form['name']
     session['useremail'] = request.form['email']
-    # print(request.form)
-    # name = request.form['name']
-    # email = request.form['email']
     # NEVER RENDER A TEMPLATE ON A POST REQUEST
     # Instead we will redirect to our index route
     return redirect('/show')
