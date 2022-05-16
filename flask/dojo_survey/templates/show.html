@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Dojo Survey Index</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="show">
+            <h1>Dojo Survey</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Location</th>
+                        <th>Favorite Language</th>
+                        <th>Additional Comments</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{data["name"]}}</td>
+                        <td>{{data["location"]}}</td>
+                        <td>{{data["fav_lang"]}}</td>
+                        <td>{{data["comments"]}}</td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<!-- <h2>Name: {{data["name"]}}</h2>
+<br>
+<h2>Location: {{data["location"]}}</h2>
+<br>
+<h2>Favorite Language: {{data["fav_lang"]}}</h2>
+<br>
+<h2>Additional Comments: {{data["comments"]}}</h2> -->
+
+</html>
