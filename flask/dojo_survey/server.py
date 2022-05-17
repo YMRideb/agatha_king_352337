@@ -2,13 +2,13 @@ from flask import Flask, render_template, request, session, redirect
 # Create a new instance of the Flask class called "app"
 app = Flask(__name__)
 app.secret_key='test'
-print("show me the money")
+# print("show me the money")
 
 
 # The "@" decorator associates this route with the function immediately following
 @app.route('/')
 def hello_world():
-    # print("show me the money")
+    print("show me the money")
     return render_template("index.html")
 
 
