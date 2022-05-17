@@ -13,7 +13,7 @@ Sunday = {
 #     "Great Number Game": "Not Complete"
 # }
 Monday = {
-    "Dojos and Ninjas": "Not Complete"
+    "Dojos and Ninjas": "In Progress"
     "Books": "Not Complete"
     "Users CRUD Modularized": "Not Complete"
     "Login and Registration": "Not Complete"
