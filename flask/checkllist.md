@@ -47,3 +47,8 @@ if __name__=="__main__":   # Ensure this file is being run directly and not from
 <script type="text/javascript" src="{{ url_for('static', filename='my_script.js') }}"></script>
 <!-- linking an image -->
 <img src="{{ url_for('static', filename='my_img.png') }}">
+*******************************************************************************
+this is for mySQL
+```
+python -m pipenv install PyMySQL flask
+```
