@@ -22,7 +22,7 @@ class User:
         users = []
         # Iterate over the db results and create instances of friends with cls.
         for user in results:
-            users_crud.append(cls(user))
+            users.append(cls(user))
         return users
 
     @classmethod

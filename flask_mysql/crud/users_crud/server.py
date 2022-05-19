@@ -1,6 +1,6 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 # import the class from friend.py
-from users import User
+from user import User
 app = Flask(__name__)
 
 
@@ -18,7 +18,7 @@ def index():
 @app.route('/create_user', methods=["POST"])
 def create_user():
     data = {
-        "fname": request.form["fname",],
+        "fname": request.form["fname"],
         "lname": request.form["lname"],
         "email": request.form["email"]
     }
