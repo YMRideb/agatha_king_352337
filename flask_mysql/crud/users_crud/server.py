@@ -11,11 +11,14 @@ def index():
     # print(friends)
     return render_template("index.html", users=users)
 
+@app.route("/new")
+def create_new_user():
+    
+    return render_template("new.html" )
 
 
 
-
-@app.route('/create_user', methods=["POST"])
+@app.route('/new/create_user', methods=["POST"])
 def create_user():
     data = {
         "fname": request.form["fname"],
