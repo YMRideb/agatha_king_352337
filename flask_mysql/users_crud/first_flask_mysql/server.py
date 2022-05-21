@@ -11,7 +11,11 @@ def index():
     # print(friends)
     return render_template("index.html", friends=friends)
 
-
+@app.route("/test")
+def test_route():
+        friends = Friend.get_all()
+        return render_template("test.html", friends=friends)
+        
 # relevant code snippet from server.py
 
 

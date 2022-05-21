@@ -11,7 +11,9 @@ def index():
     # print(friends)
     return render_template("index.html", friends=friends)
 
-
+@app.route("/add_user")
+def create_new_user():
+    return render_template("add_user.html")
 # relevant code snippet from server.py
 
 
@@ -22,7 +24,7 @@ def create_friend():
     data = {
         "fname": request.form["fname"],
         "lname": request.form["lname"],
-        "occ": request.form["occ"]
+        "email": request.form["email"]
     }
     # We pass the data dictionary into the save method from the Friend class.
     Friend.save(data)

@@ -9,15 +9,6 @@
 </head>
 
 <body>
-    <form action="/create_friend" method="POST">
-        <label for="fname">First Name:</label>
-        <input type="text" name="fname">
-        <label for="lname">Last Name:</label>
-        <input type="text" name="lname">
-        <label for="occ">Occupation:</label>
-        <input type="text" name="occ">
-        <input type="submit" value="Add Friend">
-    </form>
     <h1>These are my friends</h1>
     <table>
         <thead>
@@ -37,6 +28,7 @@
             {%endfor%}
         </tbody>
     </table>
+    <p>Add a <a href="/test">New User</a>?</p>
 </body>
 
 </html>
