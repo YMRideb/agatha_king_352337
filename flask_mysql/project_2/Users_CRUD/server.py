@@ -11,11 +11,9 @@ def index():
     # print(friends)
     return render_template("index.html", friends=friends)
 
-@app.route("/test")
-def test_route():
-        friends = Friend.get_all()
-        return render_template("test.html", friends=friends)
-        
+@app.route("/add_user")
+def create_new_user():
+    return render_template("add_user.html")
 # relevant code snippet from server.py
 
 
@@ -33,17 +31,6 @@ def create_friend():
     # Don't forget to redirect after saving to the database.
     return redirect('/')
 
-
-@app.route("/edit_user_by_id")
-def edit_user():
-    friends = Friend.get_all()
-    return render_template("/edit_user_by_id.html", friends=friends)
-
-
-@app.route("/show_user_by_id")
-def show_user():
-    friends = Friend.get_all()
-    return render_template("/show_user_by_id.html", friends=friends)
 
 if __name__ == "__main__":
     app.run(debug=True)
