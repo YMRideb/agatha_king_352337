@@ -42,7 +42,7 @@ if __name__=="__main__":   # Ensure this file is being run directly and not from
 *******************************************************************************
 <!-- based on the folder structure on the right -->
 <!-- linking a css style sheet -->
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='my_style.css') }}">
 <!-- linking a javascript file -->
 <script type="text/javascript" src="{{ url_for('static', filename='my_script.js') }}"></script>
 <!-- linking an image -->
