@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect
 # import the class from friend.py
-from friend import User1
+from friend import Friend
 app = Flask(__name__)
 
 
@@ -11,9 +11,11 @@ def index():
     # print(friends)
     return render_template("index.html", friends=friends)
 
-@app.route("/add_user")
-def create_new_user():
-    return render_template("add_user.html")
+@app.route("/test")
+def test_route():
+        friends = Friend.get_all()
+        return render_template("test.html", friends=friends)
+        
 # relevant code snippet from server.py
 
 
@@ -24,7 +26,7 @@ def create_friend():
     data = {
         "fname": request.form["fname"],
         "lname": request.form["lname"],
-        "email": request.form["email"]
+        "occ": request.form["occ"]
     }
     # We pass the data dictionary into the save method from the Friend class.
     Friend.save(data)
