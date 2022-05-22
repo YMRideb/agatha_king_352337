@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect
 # import the class from friend.py
-from friend import Friend
+from friend import User
 app = Flask(__name__)
 
 
