@@ -16,22 +16,22 @@
             <tr>
                 <th>First Name</th>
                 <th>Last Name</th>
-                <th>Occupation</th>
+                <th>Email Address</th>
             </tr>
         </thead>
         <tbody>
             {%for one_friend in friends%}
             <tr>
-                <td>{{one_friend.first_name}}</td>
-                <td>{{one_friend.last_name}}</td>
-                <td>{{one_friend.occupation}}</td>
-                <td><a href="#">Edit</a></td>
-                <td><a href="#">View</a></td>
-                <td><a href="#">Delete</a></td>
+                <td>{{one_friend.name1}}</td>
+                <td>{{one_friend.name2}}</td>
+                <td>{{one_friend.email_address}}</td>
+                <td><a href="/users/edit/{{one_friend.id}}">Edit</a></td>
+                <td><a href="/users/{{one_friend.id}}">View</a></td>
+                <td><a href="/users/delete/{{one_friend.id}}">Delete</a></td>
             </tr>
             {%endfor%}
         </tbody>
     </table>
     <br>
-    <a href="index.html">Add a New User</a>
+    <a href="/test">Add a New User</a>
 </body>

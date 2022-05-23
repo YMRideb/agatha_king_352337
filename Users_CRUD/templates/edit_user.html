@@ -5,22 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add New User</title>
+    <title>Edit user</title>
 </head>
 
 <body>
-    <!-- <a href="index.html">Go Home</a> -->
     <h1>Please enter your new user information</h1>
-    <form action="/create_friend" method="POST">
+    <form action="/edit_friend" method="POST">
         <label for="name1">First Name:</label>
-        <input type="text" name="name1">
+        <input type="text" name="name1" value="{{friends.name1}}">
         <label for="name2">Last Name:</label>
-        <input type="text" name="name2">
+        <input type="text" name="name2" value="{{friends.name2}}">
         <label for="email_address">Email:</label>
-        <input type="text" name="email_address">
-        <input type="submit" value="Add Friend">
+        <input type="text" name="email_address" value="{{friends.email_address}}">
+        <input type="submit" value="Update">
     </form>
     <a href="/">Home</a>
+    <a href="/users/<int:id>">View User</a>
 </body>
 
 </html>
