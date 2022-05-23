@@ -36,7 +36,7 @@ def edit_user(id):
     return render_template("edit_user.html", friends=friends)
 
 
-@app.route('/create_friend', methods=["POST"])
+@app.route('/create_user', methods=["POST"])
 def create_friend():
     # First we make a data dictionary from our request.form coming from our template.
     # The keys in data need to line up exactly with the variables in our query string.
@@ -51,19 +51,21 @@ def create_friend():
     return redirect('/')
 
 
-@app.route('/user/update', methods=["POST"])
+@app.route('/update_user', methods=["POST"])
 def user_update():
     # First we make a data dictionary from our request.form coming from our template.
     # The keys in data need to line up exactly with the variables in our query string.
     data = {
         "name1": request.form["name1"],
         "name2": request.form["name2"],
-        "email_address": request.form["email_address"]
+        "email_address": request.form["email_address"],
+        "id" : request.form["id"]
     }
     # We pass the data dictionary into the save method from the Friend class.
     Friend.update(data)
+    # Friend.save(data)
     # Don't forget to redirect after saving to the database.
-    return redirect('/users')
+    return redirect('/')
 
 
 @app.route("/users/delete/<int:id>")

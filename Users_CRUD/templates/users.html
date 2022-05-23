@@ -9,14 +9,29 @@
 </head>
 
 <body>
-    <h1>Full Name</h1>
+    <h1>View User: {{friends.name1}} {{friends.name2}}</h1>
+    <h2>Full Name</h2>
     <p>{{friends.name1}} {{friends.name2}} </p>
-    <p>Email</p>
+    <h2>Email</h2>
     <p>{{friends.email_address}}</p>
-    <p>Created on</p>
+    <h2>Created on</h2>
     <p>{{friends.created_at}}</p>
-    <p>Updated at</p>
+    <h2>Updated at</h2>
     <p>{{friends.updated_at}}</p>
+    <br>
+    <a href="/">Home</a>
+    <br>
+    <!-- this does not work -->
+    <a href="/users/delete/{{friends.id}}">Delete User</a>
+    <!-- this does not work -->
+
+
+    <!-- this does not work -->
+    <a href="/users/edit/{{friends.id}}">Edit User</a>
+    <!-- this does not work -->
+
+
+
 </body>
 
 </html>
