@@ -10,6 +10,29 @@
 
 <body>
     <h1>This is your landing page</h1>
+    <div class="container">
+        <h1>Dojo Survey</h1>
+        <div class="inside">
+            <form action="/submit_new" method="POST">
+                <label for="name">Your name:</label>
+                <input type="text" name="user_name" id="name">
+                <br>
+                <label for="location">Dojo Location:</label>
+                <input type="text" name="user_location">
+                <br>
+                <label for="fav_lang">Favorite Language:</label>
+                <input type="text" name="user_fav_lang">
+                <br>
+                <label for="comments">Add a comment:</label>
+                <input type="text" name="user_comments">
+                <br>
+                <input type="submit" value="Submit New">
+            </form>
+        </div>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
