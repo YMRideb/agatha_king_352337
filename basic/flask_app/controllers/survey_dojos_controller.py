@@ -1,21 +1,23 @@
 from flask import render_template, redirect, request, session
 from flask_app import app
-# from flask_app.models.dojos_model import Dojo
+from flask_app.models.survey_dojos_model import DOJO
 # from flask_app.models.ninjas_model import Ninja
 
 
 @app.route('/')
-def hello_world():
+def index():
     print("show me the money")
     return render_template("index.html")
 
 
-@app.route('/submit_new', methods=['POST'])
-def submit_new():
-    session['user_name'] = request.form['user_name']
-    session['user_location'] = request.form['user_location']
-    session['user_fav_lang'] = request.form['user_fav_lang']
-    session['user_comments'] = request.form['user_comments']
+@app.route('/create_new', methods=['POST'])
+def create_new():
+    session['dojo_name'] = request.form['dojo_name']
+    session['dojo_location'] = request.form['dojo_location']
+    session['dojo_language'] = request.form['dojo_language']
+    session['dojo_comments'] = request.form['dojo_comments']
+    session['created_at'] = request.form['created_at']
+    session['updated_at'] = request.form['updated_at']
     # print("show me the money")
     return redirect('/show')
 
