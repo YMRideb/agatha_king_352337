@@ -5,7 +5,6 @@ from flask_app.models.ninjas_model import Ninja
 from flask_app.controllers import dojos_controller
 
 
-
 @app.route("/ninjas")
 def ninjas():
     # call the get all classmethod to get all friends
@@ -33,4 +32,4 @@ def create_ninja():
     }
     Ninja.create(data)
     print(request.form)
-    return redirect('/show_dojo')
+    return redirect('/')
