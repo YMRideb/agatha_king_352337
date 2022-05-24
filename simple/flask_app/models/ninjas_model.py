@@ -26,7 +26,7 @@ class Ninja:
 
     @classmethod
     def get_ninjas_in_dojo(cls, data):
-        query = "SELECT * FROM ninjas WHERE dojo.id = %(id)s;"
+        query = "SELECT * FROM ninjas WHERE dojo_id = %(id)s;"
         # data is a dictionary that will be passed into the save method from server.py
         results = connectToMySQL(DATABASE).query_db(query, data)
         dojo_ninja_list = []
@@ -36,7 +36,7 @@ class Ninja:
 
     @classmethod
     def create(cls, data):
-        query = "INSERT INTO ninjas ( first_name, last_name, age, dojo_id, created_at, updated_at ) VALUES ( %(first_name)s, %(last_name)s, %(age)s, %(dojo_id)s,  NOW() , NOW() );"
+        query = "INSERT INTO ninjas ( first_name, last_name, age, dojo_id ) VALUES ( %(first_name)s, %(last_name)s, %(age)s, %(dojo_id)s);"
         # data is a dictionary that will be passed into the save method from server.py
         return connectToMySQL(DATABASE).query_db(query, data)
 

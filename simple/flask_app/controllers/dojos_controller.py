@@ -12,13 +12,13 @@ def dojos():
     return render_template("dojos.html", dojos=dojos)
 
 @app.route("/dojos/<int:id>")
-def show_dojo():
+def show_dojo(id):
     data = {
         "id" : id
     }
-    dojos = Dojo.get_one(data)
+    dojos = Dojo.get_all()
     ninjas = Ninja.get_ninjas_in_dojo(data)
-    return render_template("show_dojo.html", dojos=dojos)
+    return render_template("show_dojo.html", dojos=dojos, ninjas=ninjas)
 
 @app.route('/create_dojo', methods=["POST"])
 def create_dojo():
@@ -27,4 +27,4 @@ def create_dojo():
     }
     Dojo.create(data)
 
-    return redirect('/')
+    return render_template('/')

@@ -12,9 +12,14 @@
     <h1>Please create your new Ninja</h1>
     <!-- This form will submit a post method to return render template redirect back to the selected dojo page -->
     <form action="/create_ninja" method="POST">
-        <!-- have to make a drop down list of different dojos you can select-->
-        <select name="dojo_name" id=""></select>
-        <!-- have to make a drop down list of different dojos you can select-->
+
+        <select name="dojo_id" id="dojo_id">
+             {% for dojo in dojos %}
+        <option value="{{dojo.id}}">
+            {{dojo.name}}
+        </option>
+        {% endfor %}
+        </select>
         <label for="first_name">First Name:</label>
         <input type="text" name="first_name">
         <label for="last_name">Last Name:</label>
@@ -22,7 +27,7 @@
         <label for="age">Age:</label>
         <input type="text" name="age">
         <!-- fix this dojo_id jinja syntax-->
-        <input type="hidden" value="{{ dojo_id?? }}" name="dojo_id">
+        <!-- <input type="hidden" value="{{ dojo_id }}" name="dojo_id"> -->
         <!-- <input type="hidden" name="dojo_id"> -->
         <input type="submit" value="Add User">
     </form>

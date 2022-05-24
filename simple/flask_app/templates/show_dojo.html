@@ -9,19 +9,25 @@
 </head>
 
 <body>
-    <tbody>
-        {%for dojo in dojos%}
-        <tr>
-            <td>{{dojo.name}}</td>
-            <td>{{one_friend.name2}}</td>
-            <td>{{one_friend.email_address}}</td>
-            <td><a href="/users/edit/{{one_friend.id}}">Edit</a></td>
-            <td><a href="/users/{{one_friend.id}}">View</a></td>
-            <td><a href="/users/delete/{{one_friend.id}}">Delete</a></td>
-        </tr>
-        {%endfor%}
-    </tbody>
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ninja in ninjas %}
+            <tr>
+                <td>{{ninja.first_name}}</td>
+                <td>{{ninja.last_name}}</td>
+                <td>{{ninja.age}}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
     </table>
+    <a href="/">Home</a>
 </body>
 
 </html>

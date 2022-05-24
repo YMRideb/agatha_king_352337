@@ -22,7 +22,7 @@ class Dojo:
     
     @classmethod
     def get_one(cls, data):
-        query = "SELECT * FROM dojos WHERE id = %(id)s;"
+        query = "SELECT * FROM dojos;"
         # data is a dictionary that will be passed into the save method from server.py
         results = connectToMySQL(DATABASE).query_db(query, data)
         return cls(results[0])

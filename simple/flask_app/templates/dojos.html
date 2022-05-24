@@ -20,16 +20,14 @@
             <tbody>
                 {% for dojo in dojos %}
                 <tr>
-                    <td><a href="/dojos/{{dojos.id}}">{{dojo.name}}</a></td>
+                    <td><a href="/dojos/{{dojo.id}}">{{dojo.name}}</a></td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
     </div>
-    <div class="new_ninja">
-        <a href="/ninjas"></a>
-    </div>
-    <a href="/">Home</a>
+    <br>
+    <a href="/ninjas">Add A New Ninja?</a>
 </body>
 
 </html>
