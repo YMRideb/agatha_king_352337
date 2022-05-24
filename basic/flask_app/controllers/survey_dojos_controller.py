@@ -19,19 +19,21 @@ def create_new():
     session['created_at'] = request.form['created_at']
     session['updated_at'] = request.form['updated_at']
     # print("show me the money")
-    return redirect('/show')
+    return redirect('/dashboard')
 
 d
-@app.route("/show")
-def show_user():
+@app.route("/create")
+def show_dojo():
     data = {
-        "name": session['user_name'],
-        "location": session['user_location'],
-        "fav_lang": session['user_fav_lang'],
-        "comments": session['user_comments']
+        "dojo_name": session['dojo_name'],
+        "dojo_location": session['dojo_location'],
+        "dojo_language": session['dojo_language'],
+        "dojo_comments": session['dojo_comments']
+        # "created_at": session['created_at']
+        # "updated_at": session['updated_at']
     }
     # print("show me the money")
-    return render_template("show.html", data=data)
+    return render_template("dashboard.html", data=data)
 
 
 
