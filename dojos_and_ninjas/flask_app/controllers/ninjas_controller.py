@@ -1,7 +1,7 @@
 from flask import render_template, redirect, request
-from flask_app import app
-from flask_app.models.dojos_model import Dojo
-from flask_app.models.dojos_model import Ninja
+from d_and_n import app
+from d_and_n.models.dojos_model import Dojo
+from d_and_n.models.dojos_model import Ninja
 
 
 @app.route("/dojos")

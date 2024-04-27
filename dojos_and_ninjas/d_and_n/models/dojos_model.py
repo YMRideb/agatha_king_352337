@@ -1,5 +1,5 @@
-from d_and_n.config.mysqlconnection import connectToMySQL
-from d_and_n import DATABASE
+from flask_app.config.mysqlconnection import connectToMySQL
+from flask_app import DATABASE
 
 class Dojo:
     def __init__(self, data):
@@ -16,7 +16,7 @@ class Dojo:
         # Create an empty list to append our instances of friends
         dojos = []
         # Iterate over the db results and create instances of friends with cls.
-        for dojo in dojo_results:
+        for dojo in results:
             dojos.append(cls(dojo))
         return dojos
     
@@ -26,7 +26,7 @@ class Dojo:
         # data is a dictionary that will be passed into the save method from server.py
         results = connectToMySQL(DATABASE).query_db(query, data)
         return cls(results[0])
- 
+    
     @classmethod
     def create(cls, data):
         query = "INSERT INTO dojos ( name, created_at, updated_at ) VALUES ( %(name)s, NOW() , NOW() );"

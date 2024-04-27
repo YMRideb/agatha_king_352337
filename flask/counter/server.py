@@ -6,10 +6,10 @@ app.secret_key = "temp_key"
 
 @app.route('/')
 def index():
-    if 'count' in session:
-        session['count'] += 1
+    if not 'count' in session:
+        session['count'] = 1
     else:
-        session['count'] = 0
+        session['count'] += 1
     return render_template("index.html")
 
 @app.route('/destroy_session')

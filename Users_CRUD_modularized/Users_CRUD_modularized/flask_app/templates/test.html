@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New User</title>
+</head>
+
+<body>
+    <h1>Please enter your new user information</h1>
+    <form action="/create_user" method="POST">
+        <label for="name1">First Name:</label>
+        <input type="text" name="name1">
+        <label for="name2">Last Name:</label>
+        <input type="text" name="name2">
+        <label for="email_address">Email:</label>
+        <input type="text" name="email_address">
+        <input type="submit" value="Add User">
+    </form>
+    <a href="/">Home</a>
+</body>
+
+</html>

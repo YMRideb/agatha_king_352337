@@ -9,8 +9,11 @@ def hello_world():
 @app.route('/cb')
 @app.route('/cb/<int:num>')
 def mk_board(num = 8):
-    return render_template("index.html", num = num)
+    return render_template("index.html", num=num)
 
+# @app.route('/ninja/<int:x>/<int:y>')
+# def ninja_bd(x = 8, y = 8):
+#     return render_template("index.html", x=x, y=y)
 
 if __name__ == "__main__":   # Ensure this file is being run directly and not from a different module
     app.run(debug=True)    # Run the app in debug mode.
